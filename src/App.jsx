@@ -46,9 +46,14 @@ const STUDIO_CONFIG = {
 };
 
 const STUDIO_IMAGES = {
-  home: "https://images.squarespace-cdn.com/content/v1/5de45ec308114a27bbd9f7d2/1575255808044-VXBOEG6YXMNEZN6O1A74/DYStudioPic.jpg?format=1500w",
-  classes: "https://images.squarespace-cdn.com/content/v1/5de45ec308114a27bbd9f7d2/1575255842081-VAJK8EB80B19H67ANI2D/Studio+%281%29.jpg?format=1500w",
-  community: "https://images.squarespace-cdn.com/content/v1/5de45ec308114a27bbd9f7d2/1575255989502-R5B08T3K73X7X404D2GJ/P1000105.JPG?format=1500w",
+  home: "https://images.pexels.com/photos/8437076/pexels-photo-8437076.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+  classes: "https://images.pexels.com/photos/8436605/pexels-photo-8436605.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+  schedule: "https://images.pexels.com/photos/8436587/pexels-photo-8436587.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+  practice: "https://images.pexels.com/photos/8436691/pexels-photo-8436691.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+  community: "https://images.pexels.com/photos/8436622/pexels-photo-8436622.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+  teachers: "https://images.pexels.com/photos/8436490/pexels-photo-8436490.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+  events: "https://images.pexels.com/photos/8436479/pexels-photo-8436479.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+  membership: "https://images.pexels.com/photos/6752163/pexels-photo-6752163.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
   sarah: "https://images.squarespace-cdn.com/content/v1/5de45ec308114a27bbd9f7d2/1629307330675-RBOAH24U60FS24TRGDDS/2021HeadshotSgeorge.jpg?format=500w",
 };
 
@@ -473,7 +478,7 @@ function SchedulePage() {
 
   return (
     <div>
-      <PageHero image={GRADIENTS.schedule} title="Schedule" subtitle="Reserve your spot — classes fill up fast" />
+      <PageHero image={STUDIO_IMAGES.schedule} title="Schedule" subtitle="Reserve your spot — classes fill up fast" />
       <div style={{ padding: "20px 16px 0" }}>
         <div style={{ display: "flex", gap: 4, marginBottom: 16, overflowX: "auto", paddingBottom: 4 }}>
           {days.map((d, i) => (
@@ -513,7 +518,7 @@ function PracticePage() {
 
   return (
     <div>
-      <PageHero image={GRADIENTS.schedule} title="My Practice" subtitle="Track your journey and celebrate growth" />
+      <PageHero image={STUDIO_IMAGES.practice} title="My Practice" subtitle="Track your journey and celebrate growth" />
       <div style={{ padding: "20px 16px 0" }}>
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 8, marginBottom: 20 }}>
           {[
@@ -633,7 +638,7 @@ function TeachersPage() {
   const [expandedTeacher, setExpandedTeacher] = useState(null);
   return (
     <div>
-      <PageHero image={GRADIENTS.community} title="Teachers" subtitle="Viniyoga tradition since 1997. Individualized, adaptive, taught in a circle" />
+      <PageHero image={STUDIO_IMAGES.teachers} title="Teachers" subtitle="Viniyoga tradition since 1997. Individualized, adaptive, taught in a circle" />
       <div style={{ padding: "20px 16px 0", display: "flex", flexDirection: "column", gap: 12 }}>
         {TEACHERS.map(teacher => {
           const expanded = expandedTeacher === teacher.id;
@@ -670,7 +675,7 @@ function TeachersPage() {
 function MembershipPage() {
   return (
     <div>
-      <PageHero image={GRADIENTS.membership} title="Membership" subtitle="Find your path to practice" />
+      <PageHero image={STUDIO_IMAGES.membership} title="Membership" subtitle="Find your path to practice" />
       <div style={{ padding: "20px 16px 0", display: "flex", flexDirection: "column", gap: 12 }}>
         {MEMBERSHIP_TIERS.map(tier => (
           <div key={tier.id} style={{ background: T.bgCard, border: `1px solid ${tier.popular ? T.accent : T.border}`, borderRadius: 14, padding: "20px 18px", position: "relative", overflow: "hidden" }}>
@@ -694,7 +699,7 @@ function MembershipPage() {
 function EventsPage() {
   return (
     <div>
-      <PageHero image={GRADIENTS.events} title="Events" subtitle="Workshops, retreats, trainings, and special offerings" />
+      <PageHero image={STUDIO_IMAGES.events} title="Events" subtitle="Workshops, retreats, trainings, and special offerings" />
       <div style={{ padding: "20px 16px 0" }}>
         {EVENTS.map(ev => (
           <div key={ev.id} style={{ background: T.bgCard, border: `1px solid ${T.border}`, borderRadius: 14, overflow: "hidden", marginBottom: 16 }}>
